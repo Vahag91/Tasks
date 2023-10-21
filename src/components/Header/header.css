@@ -1,5 +1,5 @@
 .menuBar {
-    
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,12 +8,12 @@
   
   .menuBar a {
     text-decoration: none;
-    color: #fff;
+    color: #131212;
     margin-right: 20px;
   }
   
   .menuBar .logo {
-    color: #fff;
+    color: #060505;
     font-weight: bold;
   }
 
