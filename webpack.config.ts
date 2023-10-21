@@ -2,11 +2,19 @@ import path from "path"
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import webpack from "webpack"
 
-const config: webpack.Configuration = {
+
+interface WebpackConfig extends webpack.Configuration {
+    devServer: {
+        static: object,
+        port: number,
+        open: boolean
+    }
+}
+const config: WebpackConfig = {
 
 
-    mode: "production",
-    entry: path.resolve(__dirname, "src", "index.ts"),
+    mode: "development",
+    entry: path.resolve(__dirname, "src", "index.tsx"),
     output: {
         filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "build"),
@@ -19,6 +27,10 @@ const config: webpack.Configuration = {
                 test: /\.tsx?$/,
                 use: "ts-loader",
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
             }
         ]
     },
@@ -26,10 +38,16 @@ const config: webpack.Configuration = {
         new HTMLWebpackPlugin({
             template: path.resolve(__dirname, "public", "index.html")
         }),
-        new webpack.ProgressPlugin()
+        new webpack.ProgressPlugin(),
+        
     ],
     resolve: {
         extensions: [".tsx", ".ts", ".js"]
+    },
+    devServer: {
+        static: { directory: path.join(__dirname, "build")},
+        port: 3000,
+        open: true
     }
 }
 

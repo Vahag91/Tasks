@@ -1,0 +1,48 @@
+.mainBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    
+  }
+  
+  .card {
+
+    padding-top: 200px;
+    text-align: center;
+   max-width: 700px;
+  }
+  
+  h2 {
+    font-size: 34px;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  span {
+    font-size: 20px;
+  
+  }
+  
+  .dwn-btn {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    padding: 10px 20px;
+  }
+  
+  .dwn-btn:hover {
+    background-color: #0056b3;
+  }
+  .photo{
+    background-color: red;
+    width: 300px;
+    height: 300px;
+    margin-right: 100px;
+  margin-top: 200px;
+  }
+  
